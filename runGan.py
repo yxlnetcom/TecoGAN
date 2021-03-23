@@ -38,31 +38,15 @@ def folder_check(path):
     
     return path
 
-if( runcase == 0 ): # download inference data, trained models
-    # download the trained model
-    if(not os.path.exists("./model/")): os.mkdir("./model/")
-    cmd1 = "wget https://ge.in.tum.de/download/data/TecoGAN/model.zip -O model/model.zip;"
-    cmd1 += "unzip model/model.zip -d model; rm model/model.zip"
-    subprocess.call(cmd1, shell=True)
+!unzip -d model /content/gdrive/MyDrive/tecoGAN/model.zip
     
-    # download some test data
-    cmd2 = "wget https://ge.in.tum.de/download/data/TecoGAN/vid3_LR.zip -O LR/vid3.zip;"
-    cmd2 += "unzip LR/vid3.zip -d LR; rm LR/vid3.zip"
-    subprocess.call(cmd2, shell=True)
+!unzip -d LR /content/gdrive/MyDrive/tecoGAN/vid3_LR.zip
     
-    cmd2 = "wget https://ge.in.tum.de/download/data/TecoGAN/tos_LR.zip -O LR/tos.zip;"
-    cmd2 += "unzip LR/tos.zip -d LR; rm LR/tos.zip"
-    subprocess.call(cmd2, shell=True)
+!unzip -d LR /content/gdrive/MyDrive/tecoGAN/tos_LR.zip
     
-    # download the ground-truth data
-    if(not os.path.exists("./HR/")): os.mkdir("./HR/")
-    cmd3 = "wget https://ge.in.tum.de/download/data/TecoGAN/vid4_HR.zip -O HR/vid4.zip;"
-    cmd3 += "unzip HR/vid4.zip -d HR; rm HR/vid4.zip"
-    subprocess.call(cmd3, shell=True)
+!unzip -d HR /content/gdrive/MyDrive/tecoGAN/vid4_HR.zip
     
-    cmd3 = "wget https://ge.in.tum.de/download/data/TecoGAN/tos_HR.zip -O HR/tos.zip;"
-    cmd3 += "unzip HR/tos.zip -d HR; rm HR/tos.zip"
-    subprocess.call(cmd3, shell=True)
+!unzip -d HR /content/gdrive/MyDrive/tecoGAN/tos_HR.zip  
     
 elif( runcase == 1 ): # inference a trained model
     
